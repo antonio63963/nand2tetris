@@ -69,6 +69,26 @@ class Instruction {
         .toList();
   }
 
+  List<String> initAllLabelsAndVars(List<String> rows) {
+    List<String> withoutLabels = [];
+    for (var r = 0; r < rows.length; r++) {
+      final i = rows[r];
+      if (i.startsWith('(') && i.endsWith(')')) {
+        final label = i.substring(1, i.length - 1);
+        print('MARK: $label');
+        final key = symbolTable[label];
+        if (key == null) {
+          symbolTable[label] = r;
+        }
+        continue;
+      } else {
+        withoutLabels.add(i);
+      }
+    }
+    print(withoutLabels);
+    return withoutLabels;
+  }
+
   _toDigitInstruction(String row) {
     final isAinstruction = row.startsWith(RegExp(r'@'));
     if (isAinstruction) {
