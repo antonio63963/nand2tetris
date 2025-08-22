@@ -1,4 +1,4 @@
-Map<String, Object> symbolTable = {
+Map<String, int> symbolTable = {
   'R0': 0,
   'R1': 1,
   'R2': 2,

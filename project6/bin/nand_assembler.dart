@@ -5,5 +5,6 @@ void main(List<String> arguments) async {
     dirAsmName: 'asm_files',
     saveDirName: 'instructions',
   );
-  instruction.create('Add.asm');
+  // instruction.create('Add.asm');
+  instruction.create('Max.asm');
 }
