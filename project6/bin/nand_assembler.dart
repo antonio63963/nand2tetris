@@ -9,5 +9,6 @@ void main(List<String> arguments) async {
   // instruction.create('Max.asm');
   // instruction.create('MaxL.asm');
   // instruction.create('Rect.asm');
-  instruction.create('RectL.asm');
+  // instruction.create('RectL.asm');
+  instruction.create('PongL.asm');
 }
