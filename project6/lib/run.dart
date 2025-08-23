@@ -93,6 +93,7 @@ class FirstPath {
 class SecondPath {
   final List<String> rows;
   File fileInstructions;
+  int varRegister = 16;
 
   SecondPath(this.rows, String saveFilePath)
       : fileInstructions = File(saveFilePath);
@@ -133,8 +134,12 @@ class SecondPath {
       if (valueTableSymbols != null) {
         return _convertAddressToTwoDigitAndGetInstruction(valueTableSymbols);
       } else {
-        print('Wrong value. Not found in symbol table.');
-        throw Error();
+        // print('Wrong value. Not found in symbol table. Symbol: $addressString');
+        symbolTable[addressString] = varRegister;
+        final instruction =
+            _convertAddressToTwoDigitAndGetInstruction(varRegister);
+        varRegister++;
+        return instruction;
       }
     }
   }
