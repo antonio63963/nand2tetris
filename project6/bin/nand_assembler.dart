@@ -8,5 +8,6 @@ void main(List<String> arguments) async {
   // instruction.create('Add.asm');
   // instruction.create('Max.asm');
   // instruction.create('MaxL.asm');
-  instruction.create('Rect.asm');
+  // instruction.create('Rect.asm');
+  instruction.create('RectL.asm');
 }
